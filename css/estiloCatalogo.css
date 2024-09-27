@@ -107,6 +107,7 @@ hr {
     color: white;
     font-size: 30px;
     margin-right: 5%;
+    display: none;
 }
 
 .opPrim a{

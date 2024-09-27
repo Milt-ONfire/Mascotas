@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estiloCatalogo.css" />
+</head>
+
+<body>
+
+    <!-- <img class="logo" src="imagenes/doghouseSFN.png" height="350px"> -->
+    <div class="banner"><img src="imagenes/banner.png" /></div>
+    <nav><a href="Mascotas.html"><img class="navLogo" src="imagenes/doghouseSFN.png"></a>
+        <label class="opPrinMenu" for="hamb"><i class="fas fa-sharp fa-light fa-bars"></i></label>
+        <input type="checkbox" class="hamb_chk" id="hamb"/>
+        <ul class="menu-navegador">
+            <li class="opPrim"><a href="./corrales.html">Corrales</a></li>
+            <li class="opPrim"><a href="./jSpa.html">Jaulas para spa</a></li>
+            <li class="opPrim"><a href="./cerramientos.html">Cerramientos</a></li>
+        </ul>
+        <div class="opciones"><a href="corrales.html">Corrales</a><a href="cerramientos.html">Cerramientos</a><a href="jSpa.html">Jaula
+                para spa</a></div>
+    </nav>
+    <div class="contenedor">
+        <div class="card">
+            <div class="imagenes">
+                <img id="img1" onmouseover="changeImage('imagenes/jPequenia.jpg',1)" src="imagenes/jPequenia.jpg">
+                <img id="img2" onmouseover="changeImage('imagenes/jMedAlta.png',2)" src="imagenes/jMedAlta.png">
+                <img id="img3" onmouseover="changeImage('imagenes/jMedBaja.png',3)" src="imagenes/jMedBaja.png">
+            </div>
+            <div class="picture" id="picture">
+                <div class="rect" id="rect"></div>
+                <img id="imagen" src="imagenes/jPequenia.jpg">
+            </div>
+            <div class="product-txt">
+                <div class="descripcion">
+                    <h2 class="titulo">Jaula pequeña</h2>
+                    <hr>
+                    Elaboradas en material metálico resistente y pintura electrostática no tóxica.
+                    <br>
+                    <br>
+                    <span>Alto:&nbsp;<h6 class="alto">60cm</h6></span>
+                    <span>Largo:&nbsp;<h6 class="largo">60cm</h6></span>
+                    <span>Ancho:&nbsp;<h6 class="ancho">60cm</h6></span>
+                </div>
+                <div class="squares">
+
+                    <div class="precio">$ 280000</div>
+                    <a class="whatsapp" href="https://wa.me/+573102156174/?text=Hola%20me%20interesa%20la%20jaula">
+                        <img src="imagenes/btnWsp.png" height="100px" />
+                    </a>
+                </div>
+
+                <div class="zoom" id="zoom">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var img1 = document.querySelector('#img1')
+        var img2 = document.querySelector('#img2')
+        var img3 = document.querySelector('#img3')
+        var titulo = document.querySelector('.titulo')
+        var alto = document.querySelector('.alto')
+        var largo = document.querySelector('.largo')
+        var ancho = document.querySelector('.ancho')
+        var precio = document.querySelector('.precio')
+        var rect = document.querySelector('#rect');
+        var mainContainer = document.querySelector('#picture');
+        var imagen = document.querySelector('#imagen');
+        var zoom = document.querySelector('#zoom');
+
+        const rectRect = rect.getBoundingClientRect()
+        const mainContainerRect = mainContainer.getBoundingClientRect()
+        const imagenRect = imagen.getBoundingClientRect()
+        const zoomRect = zoom.getBoundingClientRect();
+
+        function changeImage(imgSrc, n) {
+            imagen.src = imgSrc;
+            zoom.style.backgroundImage = `url(${imagen.src})`
+
+            if (imgSrc = 'imagenes/jPequenia.png' && n == 1) {
+                titulo.innerText = "Jaula pequeña"
+                largo.innerText = "60cm"
+                ancho.innerText = "60cm"
+                alto.innerText = "60cm"
+                precio.innerText = "$ 280000"
+
+            }
+            if (imgSrc = 'imagenes/jMedAlta.png' && n == 2) {
+                titulo.innerText = "Jaula mediana alta"
+                largo.innerText = "100cm"
+                ancho.innerText = "60cm"
+                alto.innerText = "80cm"
+                precio.innerText = "$ 450000"
+            }
+            if (imgSrc = 'imagenes/jMedBaja.png' && n == 3) {
+                titulo.innerText = "Jaula mediana baja"
+                largo.innerText = "100cm"
+                ancho.innerText = "60cm"
+                alto.innerText = "60cm"
+                precio.innerText = "$ 420000"
+            }
+
+        }
+
+        mainContainer.addEventListener('mousemove', zoomImage)
+
+        function zoomImage(e) {
+
+            const {x,y} = getMousePos(e)
+
+            rect.style.left = x + 'px'
+            rect.style.top = y + 'px'
+
+            let fx = zoomRect.width / rectRect.width
+            let fy = zoomRect.height / rectRect.height
+
+            zoom.style.backgroundSize = `${imagenRect.width * fx}px 
+            ${imagenRect.height * fy}px`
+            zoom.style.backgroundPosition = `-${x * fx}px -${y * fy}px`
+
+        }
+
+        window.addEventListener('onscroll', scrollv)
+
+        function scrollv() {
+            let Svertical = window.scrollY;
+            return Svertical
+        }
+
+        function getMousePos(e) {
+            const Sv = scrollv()
+            
+            let x = e.clientX - mainContainerRect.left - rectRect.width / 2
+            let y = e.clientY + Sv - mainContainerRect.top - rectRect.height / 2
+
+            let minX = 0
+            let minY = 0
+            let maxX = mainContainerRect.width - rectRect.width
+            let maxY = mainContainerRect.height - rectRect.height
+
+            if (x <= minX) {
+                x = minX
+            } else if (x >= maxX) {
+                x = maxX
+            }
+
+            if (y <= minY) {
+                y = minY
+            } else if (y >= maxY) {
+                y = maxY
+            }
+
+            return { x, y }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
