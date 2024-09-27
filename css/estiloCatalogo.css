@@ -76,7 +76,7 @@ hr {
     margin-bottom: 20px;
 }
 
-.menu{
+.menu-navegador{
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -84,13 +84,23 @@ hr {
     padding: 0;
     background-color: white;
     display: none;
+    position: fixed;
     z-index: 100;
-    top: 70px;
+    top: 60px;
     list-style: none;
+}
+
+.opPrim:hover a{
+    background: linear-gradient(to right, white, black);
+    color: white;
 }
 
 .hamb_chk{
     display:none;
+}
+
+.hamb_chk:checked + .menu-navegador{
+    display: block;
 }
 
 .opPrinMenu{

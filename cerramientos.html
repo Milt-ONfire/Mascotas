@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerramientos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
@@ -18,6 +20,13 @@
     <!-- <img class="logo" src="imagenes/doghouseSFN.png" height="350px"> -->
     <div class="banner"><img src="imagenes/banner.png" /></div>
     <nav><a href="Mascotas.html"><img class="navLogo" src="./imagenes/doghouseSFN.png"></a>
+        <label class="opPrinMenu" for="hamb"><i class="fas fa-sharp fa-light fa-bars"></i></label>
+        <input type="checkbox" class="hamb_chk" id="hamb"/>
+        <ul class="menu-navegador">
+            <li class="opPrim"><a href="./corrales.html">Corrales</a></li>
+            <li class="opPrim"><a href="./jaulas.html">Jaulas</a></li>
+            <li class="opPrim"><a href="./jSpa.html">Jaulas para spa</a></li>
+        </ul>
         <div class="opciones"><a href="jaulas.html">Jaulas</a><a href="corrales.html">Corrales</a><a href="jSpa.html">Jaula
                 para
                 spa</a></div>
@@ -25,31 +34,29 @@
     <div class="contenedor">
         <div class="card">
             <div class="imagenes">
-                <img id="img1" onmouseover="changeImage('imagenes/corr.png',1)" src="imagenes/corr.png">
-                <img id="img2" onmouseover="changeImage('imagenes/corrmed.png',2)" src="imagenes/corrmed.png">
-                <img id="img3" onmouseover="changeImage('imagenes/corrgra.png',3)" src="imagenes/corrgra.png">
+                <img id="img1" onmouseover="changeImage('imagenes/cerramiento1.png',1)" src="imagenes/cerramiento1.png">
+                <img id="img2" onmouseover="changeImage('imagenes/cerramiento2.png',2)" src="imagenes/cerramiento2.png">
             </div>
             <div class="picture" id="picture">
                 <div class="rect" id="rect"></div>
-                <img id="imagen" class="imagen" src="./imagenes/corr.png">
+                <img id="imagen" class="imagen" src="./imagenes/cerramiento1.png">
             </div>
             <div class="product-txt">
-                <h2 class="titulo">Corral plegable pequeño</h2>
+                <h2 class="titulo">Cerramiento según medidas</h2>
                 <hr>
                 Elaborados en material metálico resistente y pintura electrostática no tóxica.
                 <br>
                 <br>
-                <span>Alto:&nbsp;<h6 class="alto">60 cm</h6></span>
-                <span>Largo:&nbsp;<h6 class="largo">3,60 mts</h6></span>
-                <span>Cantidad de plegables:&nbsp;<h6 class="ancho">6 plegables</h6></span>
+                <span>Alto:&nbsp;<h6 class="alto">...</h6></span>
+                <span>Largo:&nbsp;<h6 class="largo">...</h6></span>
+                <span>Ancho:&nbsp;<h6 class="ancho">...</h6></span>
                 <div class="squares">
-                    <div class="precio">$ 280000</div>
-                    <a class="whatsapp" href="https://wa.me/+573209620837/?text=Hola%20me%20interesa%20el%20corral">
+                    <div class="precio">según medidas</div>
+                    <a class="whatsapp" href="https://wa.me/+573209620837/?text=Hola%20me%20interesa%20un%20cerramiento">
                         <img src="imagenes/btnWsp.png" height="100px"/>
                     </a>
                 </div>
                 <div class="zoom" id="zoom">
-
                 </div>
             </div>
         </div>
@@ -60,7 +67,6 @@
         var body = document.querySelector('body')
         var img1 = document.querySelector('#img1')
         var img2 = document.querySelector('#img2')
-        var img3 = document.querySelector('#img3')
         var titulo = document.querySelector('.titulo')
         var alto = document.querySelector('.alto')
         var largo = document.querySelector('.largo')
@@ -83,27 +89,20 @@
             imagen.src = imgSrc;
             zoom.style.backgroundImage = `url(${imagen.src})`
 
-            if (imgSrc = 'imagenes/imagenes/corr.png' && n == 1) {
-                titulo.innerText = "Corral plegable pequeño"
-                largo.innerText = "3,60 mts"
-                alto.innerText = "60 cm"
-                ancho.innerText = "6 plegables"
-                precio.innerText = "$ 120000"
+            if (imgSrc = 'imagenes/cerramiento1.png' && n == 1) {
+                titulo.innerText = "Cerramiento según medidas"
+                largo.innerText = "..."
+                alto.innerText = "..."
+                ancho.innerText = "..."
+                precio.innerText = "Consúltanos"
 
             }
-            if (imgSrc = 'imagenes/corrmed.png' && n == 2) {
-                titulo.innerText = "Corral plegable mediano"
-                largo.innerText = "90cm"
-                alto.innerText = "3,60 mts"
-                ancho.innerText = "6 plegables"
-                precio.innerText = "$ 220000"
-            }
-            if (imgSrc = 'imagenes/corrgra.png' && n == 3) {
-                titulo.innerText = "Corral plegable grande"
-                largo.innerText = "4,80 mts"
-                alto.innerText = "1,20 mts"
-                ancho.innerText = "8 plegables"
-                precio.innerText = "$ 400000"
+            if (imgSrc = 'imagenes/cerramiento2.png' && n == 2) {
+                titulo.innerText = "Cerramiento según medidas"
+                largo.innerText = "..."
+                alto.innerText = "..."
+                ancho.innerText = "..."
+                precio.innerText = "Consúltanos"
             }
 
         }

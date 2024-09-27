@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corrales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
@@ -18,7 +20,14 @@
     <!-- <img class="logo" src="imagenes/doghouseSFN.png" height="350px"> -->
     <div class="banner"><img src="imagenes/banner.png" /></div>
     <nav><a href="Mascotas.html"><img class="navLogo" src="./imagenes/doghouseSFN.png"></a>
-        <div class="opciones"><a href="jaulas.html">Jaulas</a><a href="#">Cerramientos</a><a href="jSpa.html">Jaula
+        <label class="opPrinMenu" for="hamb"><i class="fas fa-sharp fa-light fa-bars"></i></label>
+        <input type="checkbox" class="hamb_chk" id="hamb"/>
+        <ul class="menu-navegador">
+            <li class="opPrim"><a href="./jSpa.html">Jaulas para spa</a></li>
+            <li class="opPrim"><a href="./jaulas.html">Jaulas</a></li>
+            <li class="opPrim"><a href="./cerramientos.html">Cerramientos</a></li>
+        </ul>
+        <div class="opciones"><a href="jaulas.html">Jaulas</a><a href="cerramientos.html">Cerramientos</a><a href="jSpa.html">Jaula
                 para
                 spa</a></div>
     </nav>
